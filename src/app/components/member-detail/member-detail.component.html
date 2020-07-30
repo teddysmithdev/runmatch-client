@@ -1,0 +1,358 @@
+<div class="main-container">
+  <section class="space-sm">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <div class="card card-profile-large text-center">
+            <div class="card-header">
+              <img
+                alt="Image"
+                src="assets/img/photo-beach.jpg"
+                class="bg-image"
+              />
+            </div>
+            <div class="card-body">
+              <a href="#">
+                <img
+                  alt="Aaron Cunningham"
+                  src="{{ user.photoUrl }}"
+                  class="avatar avatar-lg"
+                />
+              </a>
+              <div class="my-3">
+                <div class="mb-2">
+                  <h5 class="mb-0">{{ user.firstName }}</h5>
+                  <span class="text-muted">{{ user.pace }}</span>
+                </div>
+                <span class="text-small text-muted"
+                  ><i class="icon-location"></i> {{ user.city }},
+                  {{ user.state }}</span
+                >
+              </div>
+              <div>
+                <button class="btn btn-outline-primary">
+                  <i class="icon-add-user"></i> Run Invite
+                </button>
+                <button class="btn btn-outline-primary">
+                  <i class="icon-mail"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+
+          <!-- end card -->
+          <div class="card">
+            <div class="card-header d-flex justify-content-between">
+              <div>
+                <span class="h6">Recent photos</span>
+              </div>
+              <a href="#">View all &rsaquo;</a>
+            </div>
+            <div class="card-body">
+              <div class="image-gallery image-gallery-lg row">
+                <div class="col">
+                  <img
+                    *ngFor="let photo of user.photos"
+                    alt="Image"
+                    class="mb-3"
+                    src="{{ photo.url }}"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end of card-->
+        </div>
+        <!--end of col-->
+        <div class="col-12 col-md-8">
+          <div class="card">
+            <div
+              class="card-header card-header-borderless d-flex justify-content-between"
+            ></div>
+            <div class="card-body">
+              <div class="media">
+                <div class="media-body">
+                  <span class="h5 mb-0">Introduction</span>
+                  <span>{{ user.introduction }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <div>
+                <button class="btn btn-sm btn-outline-secondary">
+                  Comment
+                </button>
+                <button class="btn btn-sm btn-outline-primary">
+                  <i class="icon-thumbs-up"></i>
+                </button>
+              </div>
+              <div class="text-small">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="icon-thumbs-up"></i> 12
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="icon-share-alternative"></i> 8
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--end of card-->
+          <div class="card">
+            <div
+              class="card-header card-header-borderless d-flex justify-content-between"
+            ></div>
+            <div class="card-body">
+              <div class="media">
+                <img
+                  alt="Image"
+                  src="assets/img/graphic-product-pipeline-thumb.jpg"
+                  class="avatar avatar-square"
+                />
+                <div class="media-body">
+                  <span class="h5 mb-0">pipeline.js</span>
+                  <span>Snappy UI interaction library with flexible API</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <div>
+                <button class="btn btn-sm btn-outline-secondary">
+                  Comment
+                </button>
+                <button class="btn btn-sm btn-outline-primary">
+                  <i class="icon-thumbs-up"></i>
+                </button>
+              </div>
+              <div class="text-small">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="icon-thumbs-up"></i> 21
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="icon-share-alternative"></i> 4
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--end of card-->
+          <div class="card">
+            <div
+              class="card-header card-header-borderless d-flex justify-content-between"
+            >
+              <small class="text-muted"
+                ><i class="icon-message mr-1"></i> Commented on
+                <a href="#">Modd - Guron</a>
+              </small>
+              <small class="text-muted">5 days ago</small>
+            </div>
+            <div class="card-body">
+              <p>
+                Lovely review, couldn’t have said it better myself, though I’m
+                about to. You see here’s the thing about that&hellip;
+                <a href="#">Read more</a>
+              </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <div>
+                <button class="btn btn-sm btn-outline-secondary">
+                  Comment
+                </button>
+                <button class="btn btn-sm btn-outline-primary">
+                  <i class="icon-thumbs-up"></i>
+                </button>
+              </div>
+              <div class="text-small">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="icon-thumbs-up"></i> 1
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--end of card-->
+          <div class="card">
+            <div
+              class="card-header card-header-borderless d-flex justify-content-between"
+            >
+              <small class="text-muted"
+                ><i class="icon-add-user mr-1"></i> Joined the group
+                <a href="#">Bench</a>
+              </small>
+              <small class="text-muted">5 days ago</small>
+            </div>
+            <div class="card-body">
+              <div class="media">
+                <a href="#" class="mr-4">
+                  <img
+                    alt="Image"
+                    src="assets/img/graphic-product-bench-thumb.jpg"
+                    class="avatar-square avatar avatar-lg"
+                  />
+                </a>
+                <div class="media-body">
+                  <div class="d-flex justify-content-between mb-3">
+                    <div>
+                      <a href="#" class="mb-1">
+                        <h4>Bench</h4>
+                      </a>
+                      <span>A creative coworking space</span>
+                    </div>
+                  </div>
+                  <a class="badge badge-secondary badge-pill mb-2" href="#"
+                    >Brooklyn, NY</a
+                  >
+                  <div class="text-small">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="icon-user"></i> 48
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="icon-calendar"></i> 9
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <div>
+                <button class="btn btn-sm btn-outline-secondary">
+                  Comment
+                </button>
+                <button class="btn btn-sm btn-outline-primary">
+                  <i class="icon-thumbs-up"></i>
+                </button>
+              </div>
+              <div class="text-small">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="icon-thumbs-up"></i> 1
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--end of card-->
+          <div class="card">
+            <div
+              class="card-header card-header-borderless d-flex justify-content-between"
+            >
+              <small class="text-muted"
+                ><i class="icon-share-alternative"></i> Shared
+                <a href="#">Ben Dillon's</a> video</small
+              >
+              <small class="text-muted">A week ago</small>
+            </div>
+            <div class="card-body">
+              <div class="media">
+                <div class="video-cover rounded w-50">
+                  <img
+                    alt="Image"
+                    src="assets/img/photo-woman-sand.jpg"
+                    class="bg-image"
+                  />
+                  <div class="video-play-icon">
+                    <i class="icon-controller-play"></i>
+                  </div>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      class="embed-responsive-item"
+                      data-src="https://www.youtube.com/embed/oYqvpjKJZkU?autoplay=1&amp;mute=1&amp;showinfo=0&amp;rel=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <!--end of video cover-->
+                <div class="media-body">
+                  <span class="h5 mb-2">Sportiv Brand Presentation</span>
+                  <span
+                    >Here’s a brief description or comment of the video that has
+                    been shared</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <div>
+                <button class="btn btn-sm btn-outline-secondary">
+                  Comment
+                </button>
+                <button class="btn btn-sm btn-outline-primary">
+                  <i class="icon-thumbs-up"></i>
+                </button>
+              </div>
+              <div class="text-small">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="icon-thumbs-up"></i> 6
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="icon-share-alternative"></i> 2
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--end of card-->
+          <div class="text-center mt-5">
+            <button class="btn btn-outline-secondary">Show more</button>
+          </div>
+        </div>
+        <!--end of col-->
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+  <footer class="footer-short">
+    <div class="container">
+      <hr />
+      <nav class="row justify-content-between align-items-center">
+        <div class="col-auto">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#">
+                <img alt="Image" src="assets/img/logo-gray.svg" />
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Overview</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Documentation</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Changelog</a>
+            </li>
+          </ul>
+        </div>
+        <!--end of col-->
+        <div class="col-auto text-sm-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#"><i class="socicon-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#"><i class="socicon-facebook"></i></a>
+            </li>
+          </ul>
+        </div>
+        <!--end of col-->
+      </nav>
+      <!--end of row-->
+      <div class="row">
+        <div class="col">
+          <small>&copy; 2019 Medium Rare All Rights Reserved</small>
+        </div>
+        <!--end of col-->
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </footer>
+</div>
