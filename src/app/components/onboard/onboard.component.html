@@ -1,292 +1,170 @@
-<div class="main-container">
-  <section class="space-sm">
-    <nav aria-label="breadcrumb" role="navigation">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-10">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item">
-                <a href="pages-app.html">App Pages</a>
-              </li>
-
-              <li class="breadcrumb-item active" aria-current="page">
-                Wizard Onboarding
-              </li>
-            </ol>
-          </div>
-          <!--end of col-->
-        </div>
-        <!--end of row-->
+<div class="container">
+  <div id="stepper1" class="bs-stepper">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test-l-1">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Account Setup</span>
+        </button>
       </div>
-      <!--end of container-->
-    </nav>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="card card-lg">
-            <div class="card-body">
-              <form
-                class="wizard"
-                #editForm="ngForm"
-                (ngSubmit)="onBoardUpdate()"
-              >
-                <ul class="nav nav-tabs text-center row justify-content-center">
-                  <li class="col-3 col-md-2">
-                    <a href="#first" class="step-circle step-circle-sm">1</a>
-                  </li>
-                  <li class="col-3 col-md-2">
-                    <a href="#second" class="step-circle step-circle-sm">2</a>
-                  </li>
-                  <li class="col-3 col-md-2">
-                    <a href="#third" class="step-circle step-circle-sm">3</a>
-                  </li>
-                  <li class="col-3 col-md-2">
-                    <a href="#fourth" class="step-circle step-circle-sm">4</a>
-                  </li>
-                </ul>
-                <div class="tab-content">
-                  <div id="first">
-                    <div class="row justify-content-around align-items-center">
-                      <div class="col-8 col-md-6 col-lg-4 mb-4">
-                        <!-- <img
-                          alt="Image"
-                          src="assets/img/graphic-man-box.svg"
-                          class="w-100"
-                        /> -->
-                      </div>
-                      <!--end of col-->
-                      <div class="col-12 col-md-6 col-lg-5 mb-4">
-                        <div>
-                          <h6 class="title-decorative mb-2">Step 1.</h6>
-                          <h4 class="mb-2">What's Your Location</h4>
-                          <p>
-                            Other runners need to find you!
-                          </p>
-                          <div class="form-row form-group">
-                            <div class="col">
-                              <input
-                                class="form-control form-control-lg"
-                                type="text"
-                                id="city"
-                                [(ngModel)]="user.city"
-                                name="city"
-                                placeholder="City"
-                              />
-                            </div>
-                            <div class="col">
-                              <input
-                                class="form-control form-control-lg"
-                                type="text"
-                                name="state"
-                                [(ngModel)]="user.state"
-                                id="state"
-                                placeholder="State"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-success sw-btn-next"
-                          type="button"
-                        >
-                          Next Step
-                        </button>
-                      </div>
-                      <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                  </div>
-                  <div id="second">
-                    <div class="row justify-content-around align-items-center">
-                      <div class="col-8 col-md-6 col-lg-4 mb-4">
-                        <!-- <img
-                          alt="Image"
-                          src="assets/img/graphic-woman-writing.svg"
-                          class="w-100"
-                        /> -->
-                      </div>
-                      <!--end of col-->
-                      <div class="col-12 col-md-6 col-lg-5 mb-4">
-                        <div>
-                          <h6 class="title-decorative mb-2">Step 2.</h6>
-                          <h4>Runner Type</h4>
-                          <div>
-                            <select
-                              class="custom-select mr-sm-2"
-                              id="inlineFormCustomSelect"
-                              name="pace"
-                              [(ngModel)]="user.pace"
-                            >
-                              <option value="-8">Below 8 minutes</option>
-                              <option selected value="8-9">8-9 Minutes</option>
-                              <option value="+10">10 Minutes+</option>
-                            </select>
-                            <select
-                              class="custom-select mr-sm-2"
-                              id="inlineFormCustomSelect"
-                              name="mileage"
-                              [(ngModel)]="user.mileage"
-                            >
-                              <option value="1-2">1-2 Miles</option>
-                              <option value="2-5">2-5 Miles</option>
-                              <option value="5+">5+ Miles</option>
-                            </select>
-                            <!-- <select
-                              class="custom-select mr-sm-2"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected>Preferred Time</option>
-                              <option value="1">Morning</option>
-                              <option value="2">Noon</option>
-                              <option value="3">Night</option>
-                            </select> -->
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-success sw-btn-next mt-4"
-                          type="button"
-                        >
-                          Next Step
-                        </button>
-                      </div>
-                      <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                  </div>
-                  <div id="third">
-                    <div class="row justify-content-around align-items-center">
-                      <div class="col-8 col-md-6 col-lg-4 mb-4">
-                        <!-- <img
-                          alt="Image"
-                          src="assets/img/graphic-woman-writing-2.svg"
-                          class="w-100"
-                        /> -->
-                      </div>
-                      <!--end of col-->
-                      <div class="col-12 col-md-6 col-lg-5 mb-4">
-                        <div>
-                          <h6 class="title-decorative mb-2">Step 3.</h6>
-                          <h4>Upload A Picture</h4>
-                          <div>
-                            <div class="custom-control custom-radio">
-                              <input
-                                type="radio"
-                                class="custom-control-input"
-                                value="notify-daily"
-                                name="notify-frequency"
-                                id="notify-daily"
-                              />
-                              <label
-                                class="custom-control-label"
-                                for="notify-daily"
-                                >Daily</label
-                              >
-                            </div>
-                          </div>
-                          <div>
-                            <div class="custom-control custom-radio">
-                              <input
-                                type="radio"
-                                class="custom-control-input"
-                                value="notify-weekly"
-                                name="notify-frequency"
-                                checked
-                                id="notify-weekly"
-                              />
-                              <label
-                                class="custom-control-label"
-                                for="notify-weekly"
-                                >Weekly</label
-                              >
-                            </div>
-                          </div>
-                          <div>
-                            <div class="custom-control custom-radio">
-                              <input
-                                type="radio"
-                                class="custom-control-input"
-                                value="notify-monthly"
-                                name="notify-frequency"
-                                id="notify-monthly"
-                              />
-                              <label
-                                class="custom-control-label"
-                                for="notify-monthly"
-                                >Monthly</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-success sw-btn-next mt-4"
-                          type="button"
-                        >
-                          Next Step
-                        </button>
-                      </div>
-                      <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                  </div>
-                  <div id="fourth">
-                    <div class="row justify-content-around align-items-center">
-                      <div class="col-8 col-md-6 col-lg-5 mb-4">
-                        <!-- <img
-                          alt="Image"
-                          src="assets/img/graphic-man-computer.svg"
-                          class="w-100"
-                        /> -->
-                      </div>
-                      <!--end of col-->
-                      <div class="col-12 col-md-6 col-lg-5 mb-4">
-                        <div>
-                          <h6 class="title-decorative mb-2">Step 4.</h6>
-                          <h4 class="mb-2">
-                            What's your perfect run day like? (Intro)
-                          </h4>
-                          <p>
-                            You can put anything here, but this is a bio to help
-                            get attention!
-                          </p>
-                          <textarea
-                            rows="4"
-                            class="form-control form-control-lg"
-                            name="introduction"
-                            id="about-me"
-                            [(ngModel)]="user.introduction"
-                          ></textarea>
-                          <small
-                            >This information will be shown on your public
-                            profile</small
-                          >
-                        </div>
-                        <button
-                          class="btn btn-success btn-lg mt-4"
-                          type="submit"
-                        >
-                          Create Greatness
-                        </button>
-                      </div>
-                      <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                  </div>
-                </div>
-              </form>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-2">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Upload Picture</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-3">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Running Info</span>
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-content">
+      <form #editForm="ngForm" (ngSubmit)="onBoardUpdate()">
+        <div id="test-l-1" class="content">
+          <div class="form-group">
+            <div class="form-row form-group">
+              <div class="col">
+                <input
+                  class="form-control form-control-lg"
+                  type="text"
+                  id="city"
+                  [(ngModel)]="user.city"
+                  name="city"
+                  placeholder="City"
+                />
+              </div>
+              <div class="col">
+                <input
+                  class="form-control form-control-lg"
+                  type="text"
+                  name="state"
+                  [(ngModel)]="user.state"
+                  id="state"
+                  placeholder="State"
+                />
+              </div>
             </div>
           </div>
-          <div class="text-center">
-            <span class="text-small"
-              >Already down with the basics? <a href="#">Skip this</a>
-            </span>
-          </div>
+          <button (click)="next()" type="button" class="btn btn-primary">
+            Next
+          </button>
         </div>
-        <!--end of col-->
-      </div>
-      <!--end of row-->
+        <div id="test-l-2" class="content">
+          <div>
+            <h6 class="title-decorative mb-2">Step 3.</h6>
+            <h4>Upload A Picture</h4>
+            <div>
+              <input type="file" ng2FileSelect [uploader]="uploader" />
+            </div>
+
+            <div
+              class="col-md-9"
+              style="margin-bottom: 40px;"
+              *ngIf="uploader?.queue?.length"
+            >
+              <table class="table">
+                <tbody>
+                  <tr *ngFor="let item of uploader.queue">
+                    <td>
+                      <strong>{{ item?.file?.name }}</strong>
+                    </td>
+
+                    <td *ngIf="uploader.options.isHTML5">
+                      <div class="progress" style="margin-bottom: 0;">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          [ngStyle]="{
+                            width: item.progress + '%'
+                          }"
+                        ></div>
+                      </div>
+                    </td>
+
+                    <td nowrap>
+                      <button
+                        type="button"
+                        class="btn btn-success btn-xs"
+                        (click)="item.upload()"
+                        [disabled]="
+                          item.isReady || item.isUploading || item.isSuccess
+                        "
+                      >
+                        <span class="glyphicon glyphicon-upload"></span>
+                        Upload
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-warning btn-xs"
+                        (click)="item.cancel()"
+                        [disabled]="!item.isUploading"
+                      >
+                        <span class="glyphicon glyphicon-ban-circle"></span>
+                        Cancel
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-danger btn-xs"
+                        (click)="item.remove()"
+                      >
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div>
+                <div>
+                  Queue progress:
+                  <div class="progress" style="">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      [ngStyle]="{
+                        width: uploader.progress + '%'
+                      }"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button (click)="next()" type="button" class="btn btn-primary">
+            Next
+          </button>
+        </div>
+        <div id="test-l-3" class="content text-center">
+          <div>
+            <select
+              class="custom-select mr-sm-2"
+              id="inlineFormCustomSelect"
+              name="pace"
+              [(ngModel)]="user.pace"
+            >
+              <option value="-8">Below 8 minutes</option>
+              <option selected value="8-9">8-9 Minutes</option>
+              <option value="+10">10 Minutes+</option>
+            </select>
+            <select
+              class="custom-select mr-sm-2"
+              id="inlineFormCustomSelect"
+              name="mileage"
+              [(ngModel)]="user.mileage"
+            >
+              <option value="1-2">1-2 Miles</option>
+              <option value="2-5">2-5 Miles</option>
+              <option value="5+">5+ Miles</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-5">Submit</button>
+        </div>
+      </form>
     </div>
-    <!--end of container-->
-  </section>
-  <!--end of section-->
+  </div>
 </div>

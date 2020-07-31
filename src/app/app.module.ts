@@ -54,6 +54,7 @@ export function tokenGetter() {
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+
     TimeagoModule.forRoot(),
     PaginationModule.forRoot(),
     RouterModule,

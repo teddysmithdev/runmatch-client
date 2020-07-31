@@ -48,21 +48,25 @@
                   <img alt="Image" src="{{ user.photoUrl }}" class="avatar" />
                   <div class="media-body">
                     <div>
-                      <span class="text-muted text-small">{{
-                        user.firstName
-                      }}</span>
+                      <span class="text-muted text-small"
+                        >{{ user.city }}, {{ user.state }}</span
+                      >
                       <h5 class="h6 mb-1">
-                        {{ user.city }}, {{ user.state }}
+                        {{ user.username }}
                         <span class="badge badge-indicator badge-success"
                           >&nbsp;</span
                         >
                       </h5>
                       <ul class="list-inline text-small text-muted">
                         <li class="list-inline-item">
-                          <i class="icon-code mr-1"></i>{{ user.pace }}
+                          <span class="badge badge-primary"
+                            >Pace: {{ user.pace }} minutes</span
+                          >
                         </li>
                         <li class="list-inline-item">
-                          <i class="icon-message mr-1"></i>14
+                          <span class="badge badge-light"
+                            >Miles Daily: {{ user.mileage }}</span
+                          >
                         </li>
                         <li class="list-inline-item">
                           <small
