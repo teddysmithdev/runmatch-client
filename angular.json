@@ -24,9 +24,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "src/assets/css/theme.css",
+              "src/assets/css/entypo.css",
+              "src/assets/css/socicon.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/js/theme.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +100,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +133,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "client"
+    }
+  },
+  "defaultProject": "client",
+  "cli": {
+    "analytics": "c868def8-9d81-464d-bef8-9724b30e9806"
+  }
 }
