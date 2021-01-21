@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ok } from 'assert';
-import { of, pipe } from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
 import { take, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -46,10 +46,10 @@ resetUserParams() {
   return this.userParams;
 }
 
- getMembers(userParams: UserParams) {
-  var response = this.memberCache.get(Object.values(userParams));
+ getMembers(userParams: UserParams): Observable<any> {
+  var response = this.memberCache.get(Object.values(userParams).join('-'));
   if (response) {
-    return ok(response);
+    return of(response);
   }
   let params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
 
