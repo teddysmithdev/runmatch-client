@@ -21,6 +21,7 @@ export class MessagesComponent implements OnInit {
   pageSize = 5;
   user: User;
   userParams: UserParams;
+  messageContent: string;
 
   constructor(private messageService: MessageService, private accountService: AccountService) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => {
@@ -31,7 +32,6 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit() {
     this.loadMessages();
-    console.log(this.messages);
   }
 
   loadMessages() {
@@ -39,7 +39,6 @@ export class MessagesComponent implements OnInit {
       this.messages = response.result;
       this.pagination = response.pagination;
     })
-    console.log(this.messages);
   }
 
   pageChanged(event: any) {
@@ -50,6 +49,12 @@ export class MessagesComponent implements OnInit {
   getMessageThread(user: any) {
     this.messageService.getMessageThread(user).subscribe(messageThread => {
       this.messageThread = messageThread;
+    })
+  }
+
+  sendMessage(user) {
+    this.messageService.sendMessage(user, this.messageContent).then(() => {
+
     })
   }
 }
