@@ -9,4 +9,5 @@ export interface User {
     pace: number;
     mileage: number;
     runtime: number;
+    roles: string[];
 }

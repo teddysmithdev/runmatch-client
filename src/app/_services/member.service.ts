@@ -73,7 +73,6 @@ getMember(username: string) {
   if(member) {
     return of(member);
   }
-  console.log(member);
   return this.http.get<Member>(this.baseUrl + "user/" + username)
 }
 

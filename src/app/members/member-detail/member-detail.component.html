@@ -25,8 +25,8 @@
           <div class="media align-items-center">
             <img alt="Image" src="{{member.photoUrl || 'assets/img/graphic-product-sidekick-thumb.jpg'}}" class="avatar avatar-lg avatar-square rounded" />
             <div class="media-body">
-              <h1 class="mb-0">Username</h1>
-              <h2 class="lead mb-2">City</h2>
+              <h1 class="mb-0">{{member.userName}}</h1>
+              <h2 class="lead mb-2">{{member.city}}, {{member.state}}</h2>
               <div class="d-flex align-items-center">
                 <span class="badge badge-secondary mr-3">Ultra-Marathoner</span>
                 <ul class="list-inline text-small d-inline-block">
@@ -52,6 +52,9 @@
             </div>
           </div>
         </div>
+        <div class="col">
+          <button type="button" class="btn btn-success btn-l" (click)="showChat($event)">Send Message</button>  
+        </div>
         <!--end of col-->
       </div>
       <!--end of row-->
@@ -63,6 +66,7 @@
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-12 col-md-8 col-lg-7">
+          <app-member-messages [username]="member.userName" *ngIf="chatToggle" #memberTabs></app-member-messages>
           <!--end of video cover-->
           <h5 class="mb-4">Introduction</h5>
           <article>
@@ -109,7 +113,7 @@
             <div class="card-body">
               <div class="image-gallery image-gallery-lg row">
                 <div class="col-6">
-                  <div *ngFor="let photo of user.photos">
+                  <div *ngFor="let photo of member.photos">
                   <img alt="Image" src="{{photo.url}}" class="mb-3" />
                   </div>
                 </div>
@@ -123,13 +127,13 @@
               <li class="list-group-item">
                 <div class="d-flex justify-content-between">
                   <div><i class="icon-text-document mr-1"></i> Created</div>
-                  <span>{{member.created}}</span>
+                  <span>{{member.created | timeago}}</span>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="d-flex justify-content-between">
                   <div><i class="icon-edit mr-1"></i> Last Active</div>
-                  <span>{{member.lastActive}}</span>
+                  <span>{{member.lastActive | timeago}}</span>
                 </div>
               </li>
               <li class="list-group-item">

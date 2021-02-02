@@ -25,6 +25,15 @@ import { OnboardComponent } from './auth/onboard/onboard.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { InvitesComponent } from './invites/invites.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import { MemberMessagesComponent } from './messages/member-messages/member-messages.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { ClubListComponent } from './clubs/club-list/club-list.component';
+import { ClubDetailComponent } from './clubs/club-detail/club-detail.component';
 // import { MessageResolverService } from './_resolvers/message-resolver.service';
 
 
@@ -37,13 +46,22 @@ import { MessagesComponent } from './messages/messages.component';
       HomeComponent,
       MemberListComponent,
       MemberEditComponent,
+      MemberDetailComponent,
       PhotoEditorComponent,
       TextInputComponent,
       OnboardComponent,
       RegisterComponent,
       DateInputComponent,
       InvitesComponent,
-      MessagesComponent
+      MessagesComponent,
+      AdminPanelComponent,
+      HasRoleDirective,
+      UserManagementComponent,
+      PhotoManagementComponent,
+      RolesModalComponent,
+      MemberMessagesComponent,
+      ClubListComponent,
+      ClubDetailComponent
    ],
   imports: [
     BrowserModule,

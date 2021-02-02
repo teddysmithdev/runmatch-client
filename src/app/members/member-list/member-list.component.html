@@ -27,9 +27,9 @@
               </div>
               <form form="ngForm" (change)="loadMembers()" class="d-flex align-items-center">
                 <span class="mr-2 text-muted text-small text-nowrap">Sort by:</span>
-                <select class="custom-select">
-                  <option value="lastActive" [(ngModel)]="userParams.orderBy" selected>Last Active</option>
-                  <option value="created" [(ngModel)]="userParams.orderBy" >Newest</option>
+                <select class="custom-select" name="orderby" [(ngModel)]="userParams.orderBy">
+                  <option value="lastActive" selected>Last Active</option>
+                  <option value="created">Newest</option>
                 </select>
               </form>
             </div>
@@ -42,11 +42,11 @@
                     <div>
                       <span class="text-muted text-small">{{member.city}}, {{member.state}}</span>
                       <h5 class="h6 mb-1">{{member.userName}}
-                        <span class="badge badge-indicator badge-success">&nbsp;</span>
+                        <span *ngIf="(presence.onlineUsers$ | async).includes(member.userName)" class="badge badge-indicator badge-success">&nbsp;</span>
                       </h5>
                       <ul class="list-inline text-small text-muted">
-                        <li class="list-inline-item"><i class="icon-code mr-1"></i>Development</li>
-                        <li class="list-inline-item"><i class="icon-message mr-1"></i>Age</li>
+                        <li class="list-inline-item"><span class="badge badge-primary">{{member.pace}} Minute Pace</span></li>
+                        <li class="list-inline-item"><span class="badge badge-primary">{{member.mileage}} Miles Per Day</span></li>
                         <li class="list-inline-item">
                           <small>Last Online: {{member.lastActive | date }}</small>
                         </li>

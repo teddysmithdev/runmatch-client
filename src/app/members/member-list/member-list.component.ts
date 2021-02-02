@@ -8,6 +8,7 @@ import { User } from 'src/app/_models/user';
 import { UserParams } from 'src/app/_models/userParams';
 import { AccountService } from 'src/app/_services/account.service';
 import { MemberService } from 'src/app/_services/member.service';
+import { PresenceService } from 'src/app/_services/presence.service';
 
 @Component({
   selector: 'app-member-list',
@@ -20,7 +21,7 @@ export class MemberListComponent implements OnInit {
   userParams: UserParams;
   user: User;
 
-  constructor(private memberService: MemberService) { 
+  constructor(private memberService: MemberService, public presence: PresenceService) { 
     this.userParams = this.memberService.getUserParams();
   }
 

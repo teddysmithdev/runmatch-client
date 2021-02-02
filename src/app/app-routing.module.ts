@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { LoginComponent } from './auth/login/login.component';
 import { OnboardComponent } from './auth/onboard/onboard.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { ClubDetailComponent } from './clubs/club-detail/club-detail.component';
+import { ClubListComponent } from './clubs/club-list/club-list.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
@@ -12,6 +15,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
@@ -22,7 +26,10 @@ const routes: Routes = [
   { path: "member/edit", component: MemberEditComponent, canActivate: [AuthGuard], canDeactivate: [PreventUnsavedChangesGuard] },
   { path: "onboard", component: OnboardComponent, canActivate: [AuthGuard] },
   { path: "invites", component: InvitesComponent, canActivate: [AuthGuard] },
+  { path: "clubs", component: ClubListComponent, canActivate: [AuthGuard] },
+  { path: "clubs/:id", component: ClubDetailComponent, canActivate: [AuthGuard] },
   { path: "messages", component: MessagesComponent, canActivate: [AuthGuard] },
+  { path: "admin", component: AdminPanelComponent, canActivate: [AdminGuard] },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "errors", component: TestErrorsComponent },

@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   initializeForm() {
     this.registerForm = new FormGroup({
       username: new FormControl(null,Validators.required),
-      password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(8)]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(15)]),
       confirmPassword: new FormControl(null, [Validators.required, this.matchValues('password')])
     })
   }
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.accountService.register(this.registerForm.value).subscribe(response => {
-      this.router.navigateByUrl('members')
+      this.router.navigateByUrl('onboard')
       this.toastr.success("You are registered!", "Success")
     }, error => {
       this.validationErrors = error;
