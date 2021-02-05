@@ -39,6 +39,11 @@ export class ClubCreateComponent implements OnInit {
       state: ['', Validators.required],
       name: ['', Validators.required],
       intro: ['', Validators.required],
+      events: this.fb.group({
+        title: ['', Validators.required],
+        location: ['', Validators.required],
+        date: ['', Validators.required]
+      })
     })
   }
 
